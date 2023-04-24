@@ -1,0 +1,217 @@
+
+1 cycle test acc = 46.26 \%
+cyclical\_lr=[1e-5, 1e-1, 500, 2]
+reg\_factor=0.01
+
+3 cycles test acc = 47.83 \%
+cyclical\_lr=[1e-5, 1e-1, 800, 6]
+reg\_factor=0.01
+
+
+
+1 cycle:
+
+For Settings: reg_factor=1e-05 the final validation accuracy is 48.1%
+For Settings: reg_factor=3.1622776601683795e-05 the final validation accuracy is 48.05%
+For Settings: reg_factor=0.0001 the final validation accuracy is 48.25%
+For Settings: reg_factor=0.00031622776601683794 the final validation accuracy is 47.78%
+For Settings: reg_factor=0.001 the final validation accuracy is 48.02%
+For Settings: reg_factor=0.0031622776601683794 the final validation accuracy is 48.08%
+For Settings: reg_factor=0.01 the final validation accuracy is 47.099999999999994%
+For Settings: reg_factor=0.03162277660168379 the final validation accuracy is 43.95%
+For Settings: reg_factor=0.1 the final validation accuracy is 37.480000000000004%
+
+2 cycles:
+
+For Settings: reg_factor=1e-05 the final validation accuracy is 50.79\%
+For Settings: reg_factor=3.1622776601683795e-05 the final validation accuracy is 50.55%
+For Settings: reg_factor=0.0001 the final validation accuracy is 51.06%
+For Settings: reg_factor=0.00031622776601683794 the final validation accuracy is 50.93%
+For Settings: reg_factor=0.001 the final validation accuracy is 50.41%
+For Settings: reg_factor=0.0031622776601683794 the final validation accuracy is 50.839999999999996%
+For Settings: reg_factor=0.01 the final validation accuracy is 49.86%
+For Settings: reg_factor=0.03162277660168379 the final validation accuracy is 46.050000000000004%
+For Settings: reg_factor=0.1 the final validation accuracy is 37.940000000000005%
+
+random -5 to -3
+
+[-4.39515253 -4.0139325  -3.83597297 -3.47033385 -3.37416274 -3.35659749
+ -3.22562609 -3.12648363]
+For Settings: reg_factor=0.000040 the final validation accuracy is 50.06%
+For Settings: reg_factor=0.000097 the final validation accuracy is 51.02%
+For Settings: reg_factor=0.000146 the final validation accuracy is 50.42%
+For Settings: reg_factor=0.000339 the final validation accuracy is 50.70%
+For Settings: reg_factor=0.000423 the final validation accuracy is 51.75%
+For Settings: reg_factor=0.000440 the final validation accuracy is 50.70%
+For Settings: reg_factor=0.000595 the final validation accuracy is 50.71%
+For Settings: reg_factor=0.000747 the final validation accuracy is 50.20%
+
+
+
+class_net = ClassificationNetwork(loss_function='ce', reg_factor=0.0004, n_epochs=200, n_batch=100, first_n_samples=40000, last_n_samples=10000, cyclical_lr=[1e-5, 1e-1, 1000, 10])
+Final Validation accuracy: 52.35 %
+Final Test accuracy: 52.94 %
+
+
+
+class_net = ClassificationNetwork(loss_function='ce', reg_factor=0.004, n_epochs=200, n_batch=100,
+                                      hidden_size=50,
+                                      first_n_samples=49000, last_n_samples=1000,
+                                      cyclical_lr=[1e-5, 1e-1, 1000, 8])
+Final Validation accuracy: 50.70 %
+Final Test accuracy: 52.17 %
+
+
+
+class_net = ClassificationNetwork(loss_function='ce', reg_factor=0.004, n_epochs=200, n_batch=100,
+                                      hidden_size=100,
+                                      n_train_samples=49000, n_val_samples=1000,
+                                      cyclical_lr=[1e-5, 1e-1, 1000, 8, 0.5],
+                                      augment_p=.01)
+Final Validation accuracy: 53.40 %
+Final Test accuracy: 54.30 %
+
+
+
+Settings:
+Number of hidden units: 200
+Regularization factor: 0.0001
+Number of training steps: 8000
+Data augmentation probability: 0.05
+Momentum: 0.4
+Final validation accuracy: 54.40%
+Processing epoch::  16%|█▌        | 16/100 [11:33<1:00:40, 43.34s/it]
+Settings:
+Number of hidden units: 400
+Regularization factor: 0.0001
+Number of training steps: 8000
+Data augmentation probability: 0.05
+Momentum: 0.4
+Final validation accuracy: 58.60%
+
+Settings:
+Number of hidden units: 200
+Regularization factor: 0.0001
+Number of training steps: 12000
+Data augmentation probability: 0.05
+Momentum: 0.4
+Final validation accuracy: 53.80%
+
+
+Settings:
+Number of hidden units: 100
+Regularization factor: 0.0001
+Number of training steps: 6000
+Data augmentation probability: 0.05
+Momentum: 0.5
+Processing epoch::  12%|█▏        | 12/100 [02:05<15:22, 10.49s/it]
+Final validation accuracy: 51.10%
+Processing epoch::   0%|          | 0/100 [00:00<?, ?it/s]Settings:
+Number of hidden units: 400
+Regularization factor: 0.0001
+Number of training steps: 6000
+Data augmentation probability: 0.05
+Momentum: 0.5
+Processing epoch::  12%|█▏        | 12/100 [07:32<55:21, 37.74s/it]
+Final validation accuracy: 55.20%
+Settings:
+Number of hidden units: 100
+Regularization factor: 0.0001
+Number of training steps: 8000
+Data augmentation probability: 0.05
+Momentum: 0.5
+Processing epoch::  16%|█▌        | 16/100 [02:30<13:11,  9.43s/it]
+Final validation accuracy: 52.90%
+Processing epoch::   0%|          | 0/100 [00:00<?, ?it/s]Settings:
+Number of hidden units: 400
+Regularization factor: 0.0001
+Number of training steps: 8000
+Data augmentation probability: 0.05
+Momentum: 0.5
+Processing epoch::  16%|█▌        | 16/100 [10:03<52:48, 37.72s/it]
+Final validation accuracy: 56.00%
+Settings:
+Number of hidden units: 100
+Regularization factor: 0.001
+Number of training steps: 6000
+Data augmentation probability: 0.05
+Momentum: 0.5
+Processing epoch::  12%|█▏        | 12/100 [02:00<14:41, 10.01s/it]
+Final validation accuracy: 53.70%
+Processing epoch::   0%|          | 0/100 [00:00<?, ?it/s]Settings:
+Number of hidden units: 400
+Regularization factor: 0.001
+Number of training steps: 6000
+Data augmentation probability: 0.05
+Momentum: 0.5
+Processing epoch::  12%|█▏        | 12/100 [06:59<51:17, 34.97s/it]
+Final validation accuracy: 56.50%
+Processing epoch::   0%|          | 0/100 [00:00<?, ?it/s]Settings:
+Number of hidden units: 100
+Regularization factor: 0.001
+Number of training steps: 8000
+Data augmentation probability: 0.05
+Momentum: 0.5
+Processing epoch::  16%|█▌        | 16/100 [02:32<13:21,  9.54s/it]
+Final validation accuracy: 51.90%
+Settings:
+Number of hidden units: 400
+Regularization factor: 0.001
+Number of training steps: 8000
+Data augmentation probability: 0.05
+Momentum: 0.5
+Processing epoch::   2%|▏         | 2/100 [01:11<57:56, 35.48s/it]  C:\Users\simon\Documents\DD2424\Assignment 2\utils.py:82: RuntimeWarning: overflow encountered in exp
+  return np.exp(x) / np.sum(np.exp(x), axis=0)
+C:\Users\simon\Documents\DD2424\Assignment 2\utils.py:82: RuntimeWarning: invalid value encountered in divide
+  return np.exp(x) / np.sum(np.exp(x), axis=0)
+Processing epoch::  16%|█▌        | 16/100 [09:46<51:19, 36.66s/it]
+Final validation accuracy: 9.70%
+
+
+
+
+
+Settings:
+Number of hidden units: 400
+Regularization factor: 0.001
+Number of training steps: 8000
+Data augmentation probability: 0.05
+Momentum: 0.2
+Processing epoch::  16%|█▌        | 16/100 [19:23<1:41:47, 72.71s/it]
+Final Validation accuracy: 58.20 %
+Final Test accuracy: 56.55 %
+
+Settings:
+Number of hidden units: 400
+Regularization factor: 0.001
+Number of training steps: 8000
+Data augmentation probability: 0.05
+Momentum: 0.2
+Processing epoch::  16%|█▌        | 16/100 [09:56<52:11, 37.28s/it]
+Final Validation accuracy: 55.10 %
+Final Test accuracy: 56.59 %
+
+Settings:
+Number of hidden units: 400
+Regularization factor: 0.001
+Number of training steps: 8000
+Data augmentation probability: 0.05
+Momentum: 0.5
+Processing epoch::  16%|█▌        | 16/100 [10:03<52:49, 37.73s/it]
+Final Validation accuracy: 58.00 %
+Final Test accuracy: 56.63 %
+
+
+Settings:
+Number of hidden units: 400
+Regularization factor: 0.0004
+Number of training steps: 10000
+Data augmentation probability: 0.05
+Momentum: 0.2
+Processing epoch::  20%|██        | 20/100 [4:56:22<19:45:30, 889.13s/it]
+Final Validation accuracy: 56.40 %
+Final Test accuracy: 56.16 %
+
+
+
+
